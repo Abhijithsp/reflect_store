@@ -1,16 +1,15 @@
-# reflect
+# Reflect Store
 
-A new Flutter project.
+Reflect Store is an ECommerce flutter app with admin panel and nodejs backend .
 
-## Getting Started
+#Screens it contains
 
-This project is a starting point for a Flutter application.
+=> Login
 
-A few resources to get you started if this is your first Flutter project:
+=> Sign Up
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+=> Home Page
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+=> Product Details
+
+=> Bottom Navigation Bar 
