@@ -1,15 +1,18 @@
 # Reflect Store
 
-Reflect Store is an ECommerce flutter app with admin panel and nodejs backend .
+Reflect Store is an ECommerce flutter app with Admin panel and nodejs and mongodb as backend .
 
-# Screens it contains
+## Screens
 
-=> Login
+1. Sign In
 
-=> Sign Up
+2. Sign Up
 
-=> Home Page
+3. Home Page
 
-=> Product Details
+4. Product Details
 
-=> Bottom Navigation Bar 
+5. Bottom Navigation Bar
+
+6. Admin Panel
+
