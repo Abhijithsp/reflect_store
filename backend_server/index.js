@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 
 const app=express();
 const port=3000;
-const MongoDBUrl='mongodb+srv://flutterapp_db:yXq77QdpLzNu90h7@cluster0.4pvmc.mongodb.net/?retryWrites=true&w=majority'
+const MongoDBUrl='your mongodb url'
 
 ///MidlleWare
 
