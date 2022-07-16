@@ -39,6 +39,14 @@ dependencies:
   path_provider: ^2.0.11
   image_picker: 
   change_app_package_name: ^1.1.0
+  shared_preferences: ^2.0.15
+  badges: ^2.0.3
+  carousel_slider: ^4.1.1
+  provider: ^6.0.3
+  file_picker: ^4.6.1
+  intl: ^0.17.0
+  cloudinary_public: ^0.11.1
+  flutter_rating_bar: 
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -58,8 +66,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+      - assets/images/
+      - assets/json/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

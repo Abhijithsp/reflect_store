@@ -7,7 +7,7 @@ Route? generateRoute(RouteSettings settings) {
     case "/":
       return MaterialPageRoute(
           settings: settings, builder: (context) => const SplashScreen());
-    case SignInScreen.signinPage:
+    case SignInScreen.routeName:
       return MaterialPageRoute(
           settings: settings, builder: (context) => const SignInScreen());
   }
