@@ -6,9 +6,9 @@ const mongoose = require('mongoose');
 
 const app=express();
 const port=3000;
-const MongoDBUrl='your mongodb url'
+const MongoDBUrl=''
 
-///MidlleWare
+///MiddledWare
 
 app.use(AuthRouter);
 

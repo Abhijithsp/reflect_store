@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:reflect/utils/common_widgets/customButton.dart';
 import 'package:reflect/utils/common_widgets/customTextfield.dart';
 import 'package:reflect/utils/constants/settings/settings.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 enum Auth {
   signin,
@@ -9,7 +10,7 @@ enum Auth {
 }
 
 class SignInScreen extends StatefulWidget {
-   static const String routeName = '/auth-screen';
+  static const String routeName = '/auth-screen';
   const SignInScreen({Key? key}) : super(key: key);
 
   @override
@@ -48,28 +49,28 @@ class _SignInScreenState extends State<SignInScreen> {
       ),
       body: SingleChildScrollView(
           child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           radioButtons(),
           if (_auth == Auth.signin)
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20),
+              padding: EdgeInsets.symmetric(vertical: Adaptive.h(5)),
               child: Form(
                   key: _signInKey,
                   child: Column(
                     children: [
                       CustomTextField(
                           controller: usernameController, hintText: "Username"),
-                      const SizedBox(height: 20),
                       CustomTextField(
                           controller: passwordController, hintText: "Password"),
-                      const SizedBox(height: 20),
                       CustomButton(
-                        customHeight: 50,
-                        customWidth: 200,
+                        customHeight: Adaptive.h(7),
+                        customWidth: Adaptive.w(50),
                         text: "Sign In",
                         icon: const Icon(Icons.arrow_forward),
                         onTap: () {
                           print("Sign In");
+                          clearTextField();
                         },
                       ),
                     ],
@@ -77,7 +78,7 @@ class _SignInScreenState extends State<SignInScreen> {
             ),
           if (_auth == Auth.singup)
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20),
+              padding: EdgeInsets.symmetric(vertical: Adaptive.h(5)),
               child: Form(
                   key: _signUpKey,
                   child: Column(
@@ -85,21 +86,20 @@ class _SignInScreenState extends State<SignInScreen> {
                       CustomTextField(
                           controller: usernameController,
                           hintText: "Email Address"),
-                      const SizedBox(height: 20),
                       CustomTextField(
                           controller: createUsernameController,
                           hintText: "User Name"),
-                      const SizedBox(height: 20),
                       CustomTextField(
                           controller: passwordController, hintText: "Password"),
                       const SizedBox(height: 20),
                       CustomButton(
-                        customHeight: 50,
-                        customWidth: 150,
+                        customHeight: Adaptive.h(7),
+                        customWidth: Adaptive.w(50),
                         text: "Sign Up",
                         icon: const Icon(Icons.person_add),
                         onTap: () {
                           print("Sign Up");
+                          clearTextField();
                         },
                       ),
                     ],
@@ -112,13 +112,13 @@ class _SignInScreenState extends State<SignInScreen> {
 
   Row radioButtons() {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        SizedBox(
-          height: 50,
-          width: 240,
+        Expanded(
+          flex: 1,
           child: ListTile(
-            title: const Text("Create Account"),
+            title: Text("Create Account", style: Settings().normalText),
             leading: Radio(
                 value: Auth.singup,
                 groupValue: _auth,
@@ -130,11 +130,10 @@ class _SignInScreenState extends State<SignInScreen> {
                 }),
           ),
         ),
-        SizedBox(
-          height: 50,
-          width: 150,
+        Expanded(
+          flex: 1,
           child: ListTile(
-            title: const Text("login"),
+            title: const Text("Login"),
             leading: Radio(
                 value: Auth.signin,
                 groupValue: _auth,
@@ -148,5 +147,12 @@ class _SignInScreenState extends State<SignInScreen> {
         ),
       ],
     );
+  }
+
+  void clearTextField() {
+    usernameController.clear();
+    passwordController.clear();
+    emailController.clear();
+    createUsernameController.clear();
   }
 }

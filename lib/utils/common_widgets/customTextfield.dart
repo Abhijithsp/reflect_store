@@ -1,5 +1,6 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class CustomTextField extends StatelessWidget {
   final TextEditingController controller;
@@ -12,10 +13,11 @@ class CustomTextField extends StatelessWidget {
     return Flexible(
       flex: 0,
       child: Padding(
-        padding: const EdgeInsets.only(left: 10, right: 10, top: 15),
+        padding: EdgeInsets.symmetric(
+            vertical: Adaptive.h(1.0), horizontal: Adaptive.h(1.0)),
         child: Container(
-          width: double.infinity,
-          height: 50,
+          width: Adaptive.w(100),
+          height: Adaptive.h(10),
           decoration: const BoxDecoration(),
           child: TextField(
             controller: controller,
