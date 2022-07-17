@@ -20,8 +20,7 @@ app.use(AuthRouter);
     console.log(`DB ${error}`);
 })
 
-
-///API
+///Server inti
 
 app.listen(port,'0.0.0.0',()=>{
     console.log(`Server is live`);
@@ -31,5 +30,5 @@ app.listen(port,'0.0.0.0',()=>{
 ///Get request
 
 app.get('/',(_request,_response)=>{
-    _response.json({hell:'hrllo'});
+    _response.json({test:'test data'});
 });
